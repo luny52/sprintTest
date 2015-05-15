@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="springTest_Build" default="buildJar" basedir=".">
+	<!--properties-->
+	<property name="warfile.name" value="springTest.war" />
+	<property name="output.dir" value="Execute" />
+	<property name="lib.dir" value="lib" />
+	<property name="Tomcatlib.dir" value="Tomcatlib" />
+	<property name="java.src" value="src" />
+	<property name="build.dir" value="build/classes" />
+	<!-- build -->
+	<target name="buildJar">
+		<delete dir="${output.dir}" />
+		<delete dir="${build.dir}" />
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/${lib.dir}" />
+		<mkdir dir="${build.dir}" />
+		<copydir dest="${output.dir}/${lib.dir}" src="./${lib.dir}" />
+		
+		<!-- javac -->
+		<javac destdir="${build.dir}" includeantruntime="on">
+			<src path="${java.src}" />
+			<compilerarg line="-encoding UTF-8 "/>
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+				<fileset dir="${Tomcatlib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		
+		<!-- war -->
+        <war destfile="./${output.dir}/${warfile.name}" webxml="WebContent/WEB-INF/web.xml">  
+            <fileset dir="WebContent"/>  
+            <lib dir="${lib.dir}"/>  
+            <classes dir="${build.dir}"/>  
+        </war>  
+	</target>
+</project>
