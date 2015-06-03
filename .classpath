@@ -31,5 +31,9 @@
 	<classpathentry kind="lib" path="D:/study/springTest/lib/org.springframework.web.portlet-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/study/springTest/lib/org.springframework.web.servlet-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/study/springTest/lib/org.springframework.web.struts-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/study/springTest/lib/cglib.jar"/>
+	<classpathentry kind="lib" path="D:/study/springTest/lib/aspectjrt-1.6.8.jar"/>
+	<classpathentry kind="lib" path="D:/study/springTest/lib/aspectjweaver-1.6.6.jar"/>
+	<classpathentry kind="lib" path="D:/study/springTest/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
