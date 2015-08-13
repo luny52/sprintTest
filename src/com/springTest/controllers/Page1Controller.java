@@ -51,6 +51,7 @@ public class Page1Controller {
 		String RequestURL = request.getRequestURL().toString();
 		String RemoteHost = request.getRemoteHost();
 		String RemoteAddr = request.getRemoteAddr();
+		String LocalAddr = request.getLocalAddr();
 		int RemotePort = request.getRemotePort();
 		String Method = request.getMethod();
 		String Parameter = request.getParameter("uid");
